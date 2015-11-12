@@ -14,23 +14,23 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="/talks/reveal-template/css/reveal.css">
-		<link rel="stylesheet" href="/talks/reveal-template/css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="../reveal-template/css/reveal.css">
+		<link rel="stylesheet" href="../reveal-template/css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="/talks/reveal-template/lib/css/zenburn.css">
+		<link rel="stylesheet" href="../reveal-template/lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '/talks/reveal-template/css/print/pdf.css' : '/talks/reveal-template/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal-template/css/print/pdf.css' : '../reveal-template/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
-		<script src="/talks/reveal-template/lib/js/html5shiv.js"></script>
+		<script src="../reveal-template/lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 
@@ -43,7 +43,7 @@
 				<section>
 					<h1>Slide Title</h1>
 					<h3>Slide Subtitle</h3>
-					<p>
+					<p class="fragment">
 						<small>Slide Content</small>
 					</p>
 				</section>
@@ -51,8 +51,8 @@
 
 		</div>
 
-		<script src="/talks/reveal-template/lib/js/head.min.js"></script>
-		<script src="/talks/reveal-template/js/reveal.js"></script>
+		<script src="../reveal-template/lib/js/head.min.js"></script>
+		<script src="../reveal-template/js/reveal.js"></script>
 
 		<script>
 
@@ -68,12 +68,12 @@
 
 				// Optional reveal.js plugins
 				dependencies: [
-					{ src: '/talks/reveal-template/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '/talks/reveal-template/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/talks/reveal-template/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/talks/reveal-template/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '/talks/reveal-template/plugin/zoom-js/zoom.js', async: true },
-					{ src: '/talks/reveal-template/plugin/notes/notes.js', async: true }
+					{ src: '../reveal-template/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal-template/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal-template/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal-template/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal-template/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal-template/plugin/notes/notes.js', async: true }
 				]
 			});
 
