@@ -50,19 +50,6 @@
 
 
         <section>
-          <h3>Why to learn Bash?</h3>
-          <div style="text-align: left;">
-            <br />
-            <br />
-            <ul>
-              <li class="fragment">Automating some of the tasks you'll face.</li>
-              <li class="fragment">Makes your life much easier when using ubuntu's terminal.</li>
-              <li class="fragment">It looks cool!</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
           <h3>Advanced Computer Lab</h3>
           <div>
             <img src="imgs/dict.png" />
@@ -76,9 +63,22 @@
         <section>
           <h3>Listing the movies you have</h3>
           <img src="imgs/movies.png" />
-          <span class="fragment" >Also a bash one liner!</span>
+          <span class="fragment" >Also a bash one liner</span>
         </section>
 
+
+        <section>
+          <h3>Why to learn Bash?</h3>
+          <div style="text-align: left;">
+            <br />
+            <br />
+            <ul>
+              <li class="fragment">Automating some of the tasks you'll face.</li>
+              <li class="fragment">Makes your life much easier when using ubuntu's terminal.</li>
+              <li class="fragment">It looks cool!</li>
+            </ul>
+          </div>
+        </section>
 
         <section class="center">
           <h2>Ok, Let's start</h2>
@@ -160,6 +160,308 @@ $ cd usr/lib # Error, why?
           <pre><code style="text-align: center;">
 $ cd ../../cory
           </code></pre>
+        </section>
+
+
+        <section>
+          <h3>Useful commands</h3>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              pwd : Prints the absolute path of the current directory
+            </div>
+            <pre ><code style="padding: 15px;" >$ pwd
+/home/mohamedbassem/Desktop</code></pre>
+            </div>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              ls : Lists all the files/directories in a directory
+            </div>
+            <pre ><code style="padding: 15px;" >$ ls
+file1.html file2.html hello.sh</code></pre>
+            </div>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              cp : Copies a file/directory to a certain destination
+            </div>
+            <pre ><code style="padding: 15px;" >$ cp file.html html/file.html</code></pre>
+            </div>
+        </section>
+
+
+
+        <section>
+          <h3>Useful commands</h3>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              mv : Moves a file/directory to a certain destination
+            </div>
+            <pre ><code style="padding: 15px;" >$ mv file.html html/file.html
+$ mv file1.html index.html # Renaming? </code></pre>
+            </div>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              echo : Prints the arguments it takes with a trailing new line
+            </div>
+            <pre ><code style="padding: 15px;" >$ echo "Hello World"
+Hello World</code></pre>
+            </div>
+
+          <div class="fragment">
+            <div style="text-align: left;">
+              cat : Prints the content of a certain file
+            </div>
+            <pre ><code style="padding: 15px;" >$ cat hello.txt
+Hello I'm a file.
+And apparently I'm not empty.
+...</code></pre>
+            </div>
+        </section>
+
+
+        <section>
+          <h3>Sort</h3>
+
+          <div style="text-align: left;">
+            Sorts the content of the file lexicographically by default.<br/>
+            To sort numerically you add the -n flag. <br/>
+            To sort by a certain column use the -k <column> flag. <br/>
+          </div>
+          <pre><code style="padding: 15px;" >$ cat tmp.txt
+1 Mohamed
+3 Ahmed
+2 Zaky</code></pre>
+          <pre class="fragment"><code style="padding: 15px;" >$ sort -n -k 1 tmp.txt
+1 Mohamed
+2 Zaky
+3 Ahmed</code></pre>
+          <pre class="fragment"><code style="padding: 15px;" >$ sort -k 2 tmp.txt
+3 Ahmed
+1 Mohamed
+2 Zaky</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Uniq</h3>
+
+          <div style="text-align: left;">
+            Uniq removes duplicate ADJECENT lines. To get uniq lines in the whole file usually we sort the file first.<br/>
+          </div>
+          <pre><code style="padding: 15px;" >$ cat tmp.txt
+2
+2
+10
+4
+4
+</code></pre>
+          <pre class="fragment"><code style="padding: 15px;" >$ uniq tmp.txt
+2
+10
+4</code></pre>
+
+        </section>
+
+        <section>
+          <h3>grep</h3>
+
+          <div style="text-align: left;">
+            grep prints only lines in the files that match partially or completely a certain pattern.
+          </div>
+          <pre><code style="padding: 15px;" >cat tmp.txt
+SOME
+RANDOM
+WORDS
+HELLO</code></pre>
+          <pre class="fragment" ><code style="padding: 15px;" >grep "OM" tmp.txt
+SOME
+RANDOM
+</code></pre>
+          <div class="fragment" style="text-align: left;">
+            Using the -v flag will filter out the lines matching the pattern.
+          </div>
+          <pre class="fragment" ><code style="padding: 15px;" >grep -v "OM" tmp.txt
+WORDS
+HELLO
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>sed</h3>
+
+          <div style="text-align: left;">
+            We usually use sed for replacing patterns but it's much much more than this.
+          </div>
+          <pre><code style="padding: 15px;" >cat tmp.txt
+SOME
+RANDOM
+WORDS
+HELLOOO</code></pre>
+          <pre class="fragment" ><code style="padding: 15px;" >sed 's/O/N/g' tmp.txt
+SNME
+RANDNM
+WNRDS
+HELLNNN</code></pre>
+        </section>
+
+
+        <section class="center">
+          <h3>How can I remember all those flags?</h3>
+          <small class="fragment" >You don't need to!</small>
+        </section>
+
+
+        <section>
+          <h3>Help and Man pages</h3>
+
+          <div style="text-align: left;">
+            Most of the commands comes with a flag called "--help" or "-h" that will print how to use it. For example
+          </div>
+          <pre><code style="padding: 15px;" >$ grep --help
+Usage: grep [OPTION]... PATTERN [FILE]...
+Search for PATTERN in each FILE or standard input.
+PATTERN is, by default, a basic regular expression (BRE).
+Example: grep -i 'hello world' menu.h main.c
+...</code></pre>
+
+          <div style="text-align: left;">
+            Most of those commands have also a manual that you can access by:
+          </div>
+          <pre><code style="padding: 15px;" >$ man echo</code></pre>
+        </section>
+
+
+        <section class="center">
+          <h3>Redirections</h3>
+        </section>
+
+
+        <section>
+          <h3>Processes</h3>
+          <div>
+            <img src="imgs/processes.png" />
+          </div>
+
+          <div style="text-align: left;">
+            The three default "files" each process has:
+            <ul>
+              <li class="fragment">stdin(0): What you write in the terminal.</li>
+              <li class="fragment">stdout(1): What gets printed in the console. (e.g. System.out.println())</li>
+              <li class="fragment">stderr(2): Also printed in the console but indicates error. In eclipse for example it's printed in red. (e.g. Exceptions & System.err.println())</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Redirections</h3>
+          <pre><code style="padding: 15px;" ># Redirect the output of the command to out.txt
+$ echo "Hello World" 1> out.txt
+
+# Redirect stderr to /dev/null (Discard it)
+$ some-command 2> /dev/null
+
+# Replace stdin with a file
+$ grep "pattern" 0< file.txt
+
+# Ignore any output/error from the command
+$ some-command 1> /dev/null 2>&1</code></pre>
+          <div style="text-align: left;">
+              Note: You don't have to write the descriptor number in case of stdout and stdin and usually we don't write them. So use "&gt;" and "&lt;" directly for redirecting stdout and stdin respectively.
+          </div>
+        </section>
+
+        <section class="center">
+          <img style="background: none; border: 0px;box-shadow: 0 0 0;" src="imgs/tada.png" />
+          <img style="background: none; border: 0px;box-shadow: 0 0 0;" src="imgs/tada.png" />
+          <h3>Piping</h3>
+          <img style="background: none; border: 0px;box-shadow: 0 0 0;" src="imgs/tada.png" />
+          <img style="background: none; border: 0px;box-shadow: 0 0 0;" src="imgs/tada.png" />
+        </section>
+
+        <section>
+          <h3>Piping</h3>
+
+          <div>
+            <img src="imgs/piping.png" />
+          </div>
+
+          <div style="text-align: left;">
+            <p>Piping is a special type of redirection where stdout of a process is redirected to the stdin of another process.</p>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Piping Example</h3>
+
+          <div style="text-align: left;">
+            Let's remove 
+          </div>
+
+          <pre><code style="padding: 15px;" ></code></pre>
+
+        </section>
+
+
+
+        <section class="center">
+          <h3>Back to our example</h3>
+        </section>
+
+        <section>
+          <h3>Advanced Computer Lab Revisted</h3>
+          <div>
+            <img src="imgs/dict.png" />
+          </div>
+          <div>
+            <img src="imgs/list-all-phonemes.png" />
+            <img class="fragment" src="imgs/file-struct-question.png" />
+          </div>
+        </section>
+
+
+        <section>
+          <h3>What tools do we have?</h3>
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment">Printing Files.</li>
+              <li class="fragment">Filter out lines matching a pattern.</li>
+              <li class="fragment">Replacing patterns.</li>
+              <li class="fragment">Removing columns.</li>
+              <li class="fragment">Sorting</li>
+              <li class="fragment">Uniq</li>
+              <li class="fragment">Taking the first/last n lines from a file</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section class="center">
+          <h3>Let's do it live.</h3>
+        </section>
+
+
+        <section>
+          <h3>Another Live Example</h3>
+          <div style="text-align: left;">
+            Assume you have the following CSV that represents the grades of some students in the class. Print the name of student with the highest grade, for simplicity assume that there won't be two students with the same grade.
+          </div>
+          <pre><code style="text-align: left;">name,percentage
+Ahmed,30
+Mohamed,60
+Khlaed,20
+Yusuf,80
+Noha,0
+So3ad,90</code></pre>
+          <div class="fragment" style="text-align: left;">
+            What about writing it to a file instead of printing it?
+          </div>
         </section>
 
       </div>
