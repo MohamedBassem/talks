@@ -313,6 +313,19 @@ HELLNNN</code></pre>
         </section>
 
 
+        <section>
+          <h3>Other Worth Mentioning Commands</h3>
+          <div style="text-align: left;">
+            <ul>
+              <li>curl</li>
+              <li>head</li>
+              <li>tail</li>
+              <li>awk</li>
+            </ul>
+          </div>
+        </section>
+
+
         <section class="center">
           <h3>How can I remember all those flags?</h3>
           <small class="fragment" >You don't need to!</small>
@@ -468,6 +481,100 @@ So3ad,90</code></pre>
           <div class="fragment" style="text-align: left;">
             What about writing it to a file instead of printing it?
           </div>
+        </section>
+
+
+        <section class="center">
+          <h3>Bash scripts</h3>
+        </section>
+
+        <section>
+          <h3>Variables and Conditions</h3>
+          <pre><code style="text-align: left;">#!/bin/bash
+
+VAL=$((1+2));
+if [ $VAL -eq 3 ]; then
+  echo "YES 3";
+elif [ $VAL -lt 1 ]; then
+  echo "YES LESS THAN 1";
+else
+  echo "NO IDEA";
+fi</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Loops</h3>
+          <pre><code style="text-align: left;">#!/bin/bash
+
+NUMBER=1;
+while [ $NUMBER -lt 10 ]; do
+    echo "Number = $NUMBER"
+    NUMBER=$((NUMBER + 1))
+done
+
+# Until also works
+
+VAL="1 2 X 4"; # `ls` maybe ?
+for i in $VAL; do
+  echo $i;
+done</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Functions</h3>
+          <pre><code style="text-align: left;">#!/bin/bash
+
+function greet {
+  echo "Hello $1"
+}
+
+greet Mohamed</code></pre>
+
+        <div style="text-align:left;">
+          <br />
+          Command line arguments and Function params are accessed by the special variable $[number].
+        </div>
+        </section>
+
+
+        <section>
+          <h3>Execution</h3>
+          <div style="text-align:left;">
+            Usually bash scripts have ".sh" file extension or no extension at all. Remember the Shebang? 
+            <br />
+            In order to execute you'll have to make the file executable first.
+          </div>
+
+          <pre><code style="text-align: left;"># We will understand this command in a later session
+$ sudo chmod u+x script.sh
+$ ./script.sh # That's a relative path
+</code></pre>
+
+        </section>
+
+
+        <section>
+          <h3>Exit Codes</h3>
+
+          <div style="text-align:left;">
+            How to know whether the command we just ran exited in success or failure?
+          </div>
+          <pre><code style="text-align: left;">#!/bin/bash
+
+exit(0);
+</code></pre>
+
+        <div style="text-align:left;">
+          <br />
+          <ul>
+            <li class="fragment">Exiting with zero means sucess, anything else is failure</li>
+            <li class="fragment">You can check the exit status of the last executed command using the special var "$?"</li>
+            <li class="fragment">Remember the loop condition?</li>
+          </ul>
+        </div>
+
         </section>
 
       </div>
