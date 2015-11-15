@@ -75,8 +75,11 @@
             <ul>
               <li class="fragment">Automating some of the tasks you'll face.</li>
               <li class="fragment">Makes your life much easier when using ubuntu's terminal.</li>
+              <li class="fragment">Remote Sessions on Servers.</li>
               <li class="fragment">It looks cool!</li>
             </ul>
+            <br />
+            <p class="fragment">You can do literally anything you can do with the mouse using the terminal.</p>
           </div>
         </section>
 
@@ -368,6 +371,9 @@ $ some-command 2> /dev/null
 
 # Replace stdin with a file
 $ grep "pattern" 0< file.txt
+
+# Appending to the file
+$ echo "Hello World" 1>> out.txt
 
 # Ignore any output/error from the command
 $ some-command 1> /dev/null 2>&1</code></pre>
