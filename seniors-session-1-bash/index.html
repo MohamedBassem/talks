@@ -291,7 +291,7 @@ And apparently I'm not empty.
 1 Mohamed
 3 Ahmed
 2 Zaky</code></pre>
-          <pre class="fragment"><code class="bash">$ sort -n -k 1 tmp.txt
+          <pre class="fragment"><code class="bash">$ sort -n tmp.txt
 1 Mohamed
 2 Zaky
 3 Ahmed</code></pre>
@@ -553,6 +553,7 @@ So3ad,90</code></pre>
           <h3>Variables and Conditions</h3>
           <pre><code class="bash" style="text-align: left;">#!/bin/bash
 
+VAR1="HELLO";
 VAL=$((1+2));
 if [ $VAL -eq 3 ]; then
   echo "YES 3";
