@@ -86,8 +86,8 @@
             <br />
             <ul>
               <li class="fragment">Automating some of the tasks you'll face.</li>
-              <li class="fragment">Makes your life much easier when using ubuntu's terminal.</li>
-              <li class="fragment">Remote Sessions on Servers.</li>
+              <li class="fragment">Makes your life much easier when using Ubuntu's terminal.</li>
+              <li class="fragment">Remote sessions on servers.</li>
               <li class="fragment">It looks cool!</li>
             </ul>
             <br />
@@ -105,12 +105,12 @@
           <div style="text-align: left;">
             <br />
             <ul>
-              <li>Navigating The File System</li>
+              <li>Navigating the File System</li>
               <li>Some useful commands</li>
               <li>Redirections</li>
               <li>Piping</li>
-              <li>Live Examples</li>
-              <li>Writing Scripts</li>
+              <li>Live examples</li>
+              <li>Writing scripts</li>
             </ul>
           </div>
         </section>
@@ -118,7 +118,7 @@
           <h3>Command Structure</h3>
           <br />
           <div style="text-align: left;">
-          <pre><code style="text-align: center;">
+          <pre><code class="bash">
 $ echo -e -n "Hello World"
           </code></pre>
           <br />
@@ -144,7 +144,7 @@ $ echo -e -n "Hello World"
           <div>
             <img src="imgs/filesystem-relative.png" />
           </div>
-          <pre><code style="text-align: center;">
+          <pre><code class="bash" style="text-align: center;">
 $ cd work
           </code></pre>
         </section>
@@ -154,7 +154,7 @@ $ cd work
           <div>
             <img src="imgs/filesystem-absolute.png" />
           </div>
-          <pre><code style="text-align: center;">
+          <pre><code class="bash" style="text-align: center;">
 $ cd /usr/lib
           </code></pre>
         </section>
@@ -165,7 +165,7 @@ $ cd /usr/lib
           <div>
             <img src="imgs/filesystem-up.png" />
           </div>
-          <pre><code style="text-align: center;">
+          <pre><code class="bash" style="text-align: center;">
 $ cd ..
           </code></pre>
         </section>
@@ -176,7 +176,7 @@ $ cd ..
           <div>
             <img src="imgs/filesystem-wd.png" />
           </div>
-          <pre><code style="text-align: center;">
+          <pre><code class="bash" style="text-align: center;">
 $ cd usr/lib # Error, why?
           </code></pre>
         </section>
@@ -187,7 +187,7 @@ $ cd usr/lib # Error, why?
           <div>
             <img src="imgs/filesystem-up-twice.png" />
           </div>
-          <pre><code style="text-align: center;">
+          <pre><code class="bash" style="text-align: center;">
 $ cd ../../cory
           </code></pre>
         </section>
@@ -200,7 +200,7 @@ $ cd ../../cory
             <div style="text-align: left;">
               pwd : Prints the absolute path of the current directory
             </div>
-            <pre ><code>$ pwd
+            <pre ><code class="bash">$ pwd
 /home/mohamedbassem/Desktop</code></pre>
             </div>
 
@@ -208,7 +208,7 @@ $ cd ../../cory
             <div style="text-align: left;">
               ls : Lists all the files/directories in a directory
             </div>
-            <pre ><code>$ ls
+            <pre ><code class="bash">$ ls
 file1.html file2.html hello.sh</code></pre>
             </div>
 
@@ -216,7 +216,7 @@ file1.html file2.html hello.sh</code></pre>
             <div style="text-align: left;">
               cp : Copies a file/directory to a certain destination
             </div>
-            <pre ><code>$ cp file.html html/file.html</code></pre>
+            <pre ><code class="bash">$ cp file.html html/file.html</code></pre>
             </div>
         </section>
 
@@ -229,7 +229,7 @@ file1.html file2.html hello.sh</code></pre>
             <div style="text-align: left;">
               mv : Moves a file/directory to a certain destination
             </div>
-            <pre ><code>$ mv file.html html/file.html
+            <pre ><code class="bash">$ mv file.html html/file.html
 $ mv file1.html index.html # Renaming? </code></pre>
             </div>
 
@@ -237,7 +237,7 @@ $ mv file1.html index.html # Renaming? </code></pre>
             <div style="text-align: left;">
               echo : Prints the arguments it takes with a trailing new line
             </div>
-            <pre ><code>$ echo "Hello World"
+            <pre ><code class="bash">$ echo "Hello World"
 Hello World</code></pre>
             </div>
 
@@ -245,7 +245,7 @@ Hello World</code></pre>
             <div style="text-align: left;">
               cat : Prints the content of a certain file
             </div>
-            <pre ><code>$ cat hello.txt
+            <pre ><code class="bash">$ cat hello.txt
 Hello I'm a file.
 And apparently I'm not empty.
 ...</code></pre>
@@ -260,21 +260,21 @@ And apparently I'm not empty.
             <div style="text-align: left;">
               rm : removes one or more files/directories
             </div>
-            <pre ><code>$ rm file.html file2.html</code></pre>
+            <pre ><code class="bash">$ rm file.html file2.html</code></pre>
             </div>
 
           <div class="fragment">
             <div style="text-align: left;">
               mkdir : Creates one or more directories.
             </div>
-            <pre ><code>$ mkdir tests logs</code></pre>
+            <pre ><code class="bash">$ mkdir tests logs</code></pre>
             </div>
 
           <div class="fragment">
             <div style="text-align: left;">
               curl : Issues an HTTP request to a certain endpoint and prints the response to stdout
             </div>
-            <pre ><code>$ curl http://google.com</code></pre>
+            <pre ><code class="bash">$ curl http://google.com</code></pre>
             </div>
         </section>
 
@@ -287,15 +287,15 @@ And apparently I'm not empty.
             To sort numerically you add the -n flag. <br/>
             To sort by a certain column use the -k <column> flag. <br/>
           </div>
-          <pre><code>$ cat tmp.txt
+          <pre><code class="bash">$ cat tmp.txt
 1 Mohamed
 3 Ahmed
 2 Zaky</code></pre>
-          <pre class="fragment"><code>$ sort -n -k 1 tmp.txt
+          <pre class="fragment"><code class="bash">$ sort -n -k 1 tmp.txt
 1 Mohamed
 2 Zaky
 3 Ahmed</code></pre>
-          <pre class="fragment"><code>$ sort -k 2 tmp.txt
+          <pre class="fragment"><code class="bash">$ sort -k 2 tmp.txt
 3 Ahmed
 1 Mohamed
 2 Zaky</code></pre>
@@ -308,17 +308,19 @@ And apparently I'm not empty.
           <div style="text-align: left;">
             Uniq removes duplicate ADJECENT lines. To get uniq lines in the whole file usually we sort the file first.<br/>
           </div>
-          <pre><code>$ cat tmp.txt
+          <pre><code class="bash">$ cat tmp.txt
 2
 2
 10
 4
 4
+2
 </code></pre>
-          <pre class="fragment"><code>$ uniq tmp.txt
+          <pre class="fragment"><code class="bash">$ uniq tmp.txt
 2
 10
-4</code></pre>
+4
+2</code></pre>
 
         </section>
 
@@ -328,19 +330,19 @@ And apparently I'm not empty.
           <div style="text-align: left;">
             grep prints only lines in the files that match partially or completely a certain pattern.
           </div>
-          <pre><code>cat tmp.txt
+          <pre><code class="bash">$ cat tmp.txt
 SOME
 RANDOM
 WORDS
 HELLO</code></pre>
-          <pre class="fragment" ><code>grep "OM" tmp.txt
+          <pre class="fragment" ><code class="bash">$ grep "OM" tmp.txt
 SOME
 RANDOM
 </code></pre>
           <div class="fragment" style="text-align: left;">
-            Using the -v flag will filter out the lines matching the pattern.
+            Using the -v flag will exclude the lines matching the pattern.
           </div>
-          <pre class="fragment" ><code>grep -v "OM" tmp.txt
+          <pre class="fragment" ><code class="bash">$ grep -v "OM" tmp.txt
 WORDS
 HELLO
 </code></pre>
@@ -353,12 +355,12 @@ HELLO
           <div style="text-align: left;">
             We usually use sed for replacing patterns but it's much much more than this.
           </div>
-          <pre><code>cat tmp.txt
+          <pre><code class="bash">$ cat tmp.txt
 SOME
 RANDOM
 WORDS
 HELLOOO</code></pre>
-          <pre class="fragment" ><code>sed 's/O/N/g' tmp.txt
+          <pre class="fragment" ><code class="bash">$ sed 's/O/N/g' tmp.txt
 SNME
 RANDNM
 WNRDS
@@ -382,7 +384,7 @@ HELLNNN</code></pre>
 
         <section class="center">
           <h3>How can I remember all those flags?</h3>
-          <small class="fragment" >You don't need to!</small>
+          <p class="fragment" >You don't need to!</p>
         </section>
 
 
@@ -392,7 +394,7 @@ HELLNNN</code></pre>
           <div style="text-align: left;">
             Most of the commands comes with a flag called "--help" or "-h" that will print how to use it. For example
           </div>
-          <pre><code>$ grep --help
+          <pre><code class="bash">$ grep --help
 Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
@@ -402,7 +404,7 @@ Example: grep -i 'hello world' menu.h main.c
           <div style="text-align: left;">
             Most of those commands have also a manual that you can access by:
           </div>
-          <pre><code>$ man echo</code></pre>
+          <pre><code class="bash">$ man echo</code></pre>
         </section>
 
 
@@ -430,7 +432,7 @@ Example: grep -i 'hello world' menu.h main.c
 
         <section>
           <h3>Redirections</h3>
-          <pre><code># Redirect the output of the command to out.txt
+          <pre><code class="bash"># Redirect the output of the command to out.txt
 $ echo "Hello World" 1> out.txt
 
 # Redirect stderr to /dev/null (Discard it)
@@ -477,7 +479,7 @@ $ some-command 1> /dev/null 2>&1</code></pre>
             Print all the files ending with ".txt" in the current directory
           </div>
 
-          <pre><code>$ ls
+          <pre><code class="bash">$ ls
 file.ext game.ext README.md test.txt example.txt
 
 $ ls | grep "\.txt$"
@@ -530,7 +532,7 @@ example.txt</code></pre>
           <div style="text-align: left;">
             Assume you have the following CSV hosted <a href="resources/grades.csv">here</a> that represents the grades of some students in the class. Print the name of student with the highest grade, for simplicity assume that there won't be two students with the same grade.
           </div>
-          <pre><code style="text-align: left;">name,percentage
+          <pre><code class="bash" style="text-align: left;">name,percentage
 Ahmed,30
 Mohamed,60
 Khaled,20
@@ -549,7 +551,7 @@ So3ad,90</code></pre>
 
         <section>
           <h3>Variables and Conditions</h3>
-          <pre><code style="text-align: left;">#!/bin/bash
+          <pre><code class="bash" style="text-align: left;">#!/bin/bash
 
 VAL=$((1+2));
 if [ $VAL -eq 3 ]; then
@@ -564,7 +566,7 @@ fi</code></pre>
 
         <section>
           <h3>Loops</h3>
-          <pre><code style="text-align: left;">#!/bin/bash
+          <pre><code class="bash" style="text-align: left;">#!/bin/bash
 
 NUMBER=1;
 while [ $NUMBER -lt 10 ]; do
@@ -583,7 +585,7 @@ done</code></pre>
 
         <section>
           <h3>Functions</h3>
-          <pre><code style="text-align: left;">#!/bin/bash
+          <pre><code class="bash" style="text-align: left;">#!/bin/bash
 
 function greet {
   echo "Hello $1"
@@ -606,9 +608,11 @@ greet Mohamed</code></pre>
             In order to execute you'll have to make the file executable first.
           </div>
 
-          <pre><code style="text-align: left;"># We will understand this command in a later session
+          <pre><code class="bash" style="text-align: left;"># We will understand this command in a later session
 $ sudo chmod u+x script.sh
 $ ./script.sh # That's a relative path
+
+$ bash script.sh # You won't need to change the file permissions
 </code></pre>
 
         </section>
@@ -620,7 +624,7 @@ $ ./script.sh # That's a relative path
           <div style="text-align:left;">
             How to know whether the command we just ran exited in success or failure?
           </div>
-          <pre><code style="text-align: left;">#!/bin/bash
+          <pre><code class="bash" style="text-align: left;">#!/bin/bash
 
 exit(0);
 </code></pre>
@@ -640,7 +644,7 @@ exit(0);
         <section>
           <h3>Conditions</h3>
 
-          <pre><code style="text-align: left;">$ type [
+          <pre><code class="bash" style="text-align: left;">$ type [
 [ is a shell builtin
 
 $ man [
@@ -663,7 +667,7 @@ $ echo $?
         <section>
           <h3>Expansions</h3>
 
-          <pre><code style="text-align: left;">$ echo test{1,3}
+          <pre><code class="bash" style="text-align: left;">$ echo test{1,3}
 test1 test3
 
 $ echo test{1..5}
@@ -686,7 +690,7 @@ $ mv test.txt{,_old}
         <br />
         <div style="text-align:left;">
 
-          <pre><code style="text-align: left;"># Both will switch to the home directory
+          <pre><code class="bash" style="text-align: left;"># Both will switch to the home directory
 
 $ cd ~
 $ cd
