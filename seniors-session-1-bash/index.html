@@ -368,6 +368,7 @@ HELLNNN</code></pre>
               <li>tail</li>
               <li>awk</li>
               <li>touch</li>
+              <li>wc</li>
             </ul>
           </div>
         </section>
@@ -467,10 +468,15 @@ $ some-command 1> /dev/null 2>&1</code></pre>
           <h3>Piping Example</h3>
 
           <div style="text-align: left;">
-            Let's remove 
+            Print all the files ending with ".txt" in the current directory
           </div>
 
-          <pre><code style="padding: 15px;" ></code></pre>
+          <pre><code style="padding: 15px;" >$ ls
+file.ext game.ext README.md test.txt example.txt
+
+$ ls | grep "\.txt$"
+test.txt
+example.txt</code></pre>
 
         </section>
 
@@ -645,6 +651,26 @@ $ echo $?
           "[" itself is a command, that takes some flags representing the condition and exits with sucess if the condition is satisfied and failure otherwise.
         </div>
 
+        </section>
+
+
+        <section>
+          <h3>Expansions</h3>
+
+          <pre><code style="text-align: left;">$ echo test{1,3}
+test1 test3
+
+$ echo test{1..5}
+test1 test2 test3 test4 test5
+
+$ mkdir teams{1..100}
+
+$ mv test.txt{,_old}
+</code></pre>
+        <br />
+        <div style="text-align:left;">
+          "[" itself is a command, that takes some flags representing the condition and exits with sucess if the condition is satisfied and failure otherwise.
+        </div>
         </section>
 
       </div>
