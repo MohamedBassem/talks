@@ -20,6 +20,12 @@
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="../reveal-template/lib/css/zenburn.css">
 
+    <style>
+      code{
+        padding: 15px !important;
+      }
+    </style>
+
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
@@ -194,7 +200,7 @@ $ cd ../../cory
             <div style="text-align: left;">
               pwd : Prints the absolute path of the current directory
             </div>
-            <pre ><code style="padding: 15px;" >$ pwd
+            <pre ><code>$ pwd
 /home/mohamedbassem/Desktop</code></pre>
             </div>
 
@@ -202,7 +208,7 @@ $ cd ../../cory
             <div style="text-align: left;">
               ls : Lists all the files/directories in a directory
             </div>
-            <pre ><code style="padding: 15px;" >$ ls
+            <pre ><code>$ ls
 file1.html file2.html hello.sh</code></pre>
             </div>
 
@@ -210,7 +216,7 @@ file1.html file2.html hello.sh</code></pre>
             <div style="text-align: left;">
               cp : Copies a file/directory to a certain destination
             </div>
-            <pre ><code style="padding: 15px;" >$ cp file.html html/file.html</code></pre>
+            <pre ><code>$ cp file.html html/file.html</code></pre>
             </div>
         </section>
 
@@ -223,7 +229,7 @@ file1.html file2.html hello.sh</code></pre>
             <div style="text-align: left;">
               mv : Moves a file/directory to a certain destination
             </div>
-            <pre ><code style="padding: 15px;" >$ mv file.html html/file.html
+            <pre ><code>$ mv file.html html/file.html
 $ mv file1.html index.html # Renaming? </code></pre>
             </div>
 
@@ -231,7 +237,7 @@ $ mv file1.html index.html # Renaming? </code></pre>
             <div style="text-align: left;">
               echo : Prints the arguments it takes with a trailing new line
             </div>
-            <pre ><code style="padding: 15px;" >$ echo "Hello World"
+            <pre ><code>$ echo "Hello World"
 Hello World</code></pre>
             </div>
 
@@ -239,7 +245,7 @@ Hello World</code></pre>
             <div style="text-align: left;">
               cat : Prints the content of a certain file
             </div>
-            <pre ><code style="padding: 15px;" >$ cat hello.txt
+            <pre ><code>$ cat hello.txt
 Hello I'm a file.
 And apparently I'm not empty.
 ...</code></pre>
@@ -254,21 +260,21 @@ And apparently I'm not empty.
             <div style="text-align: left;">
               rm : removes one or more files/directories
             </div>
-            <pre ><code style="padding: 15px;" >$ rm file.html file2.html</code></pre>
+            <pre ><code>$ rm file.html file2.html</code></pre>
             </div>
 
           <div class="fragment">
             <div style="text-align: left;">
               mkdir : Creates one or more directories.
             </div>
-            <pre ><code style="padding: 15px;" >$ mkdir tests logs</code></pre>
+            <pre ><code>$ mkdir tests logs</code></pre>
             </div>
 
           <div class="fragment">
             <div style="text-align: left;">
               curl : Issues an HTTP request to a certain endpoint and prints the response to stdout
             </div>
-            <pre ><code style="padding: 15px;" >$ curl http://google.com</code></pre>
+            <pre ><code>$ curl http://google.com</code></pre>
             </div>
         </section>
 
@@ -281,15 +287,15 @@ And apparently I'm not empty.
             To sort numerically you add the -n flag. <br/>
             To sort by a certain column use the -k <column> flag. <br/>
           </div>
-          <pre><code style="padding: 15px;" >$ cat tmp.txt
+          <pre><code>$ cat tmp.txt
 1 Mohamed
 3 Ahmed
 2 Zaky</code></pre>
-          <pre class="fragment"><code style="padding: 15px;" >$ sort -n -k 1 tmp.txt
+          <pre class="fragment"><code>$ sort -n -k 1 tmp.txt
 1 Mohamed
 2 Zaky
 3 Ahmed</code></pre>
-          <pre class="fragment"><code style="padding: 15px;" >$ sort -k 2 tmp.txt
+          <pre class="fragment"><code>$ sort -k 2 tmp.txt
 3 Ahmed
 1 Mohamed
 2 Zaky</code></pre>
@@ -302,14 +308,14 @@ And apparently I'm not empty.
           <div style="text-align: left;">
             Uniq removes duplicate ADJECENT lines. To get uniq lines in the whole file usually we sort the file first.<br/>
           </div>
-          <pre><code style="padding: 15px;" >$ cat tmp.txt
+          <pre><code>$ cat tmp.txt
 2
 2
 10
 4
 4
 </code></pre>
-          <pre class="fragment"><code style="padding: 15px;" >$ uniq tmp.txt
+          <pre class="fragment"><code>$ uniq tmp.txt
 2
 10
 4</code></pre>
@@ -322,19 +328,19 @@ And apparently I'm not empty.
           <div style="text-align: left;">
             grep prints only lines in the files that match partially or completely a certain pattern.
           </div>
-          <pre><code style="padding: 15px;" >cat tmp.txt
+          <pre><code>cat tmp.txt
 SOME
 RANDOM
 WORDS
 HELLO</code></pre>
-          <pre class="fragment" ><code style="padding: 15px;" >grep "OM" tmp.txt
+          <pre class="fragment" ><code>grep "OM" tmp.txt
 SOME
 RANDOM
 </code></pre>
           <div class="fragment" style="text-align: left;">
             Using the -v flag will filter out the lines matching the pattern.
           </div>
-          <pre class="fragment" ><code style="padding: 15px;" >grep -v "OM" tmp.txt
+          <pre class="fragment" ><code>grep -v "OM" tmp.txt
 WORDS
 HELLO
 </code></pre>
@@ -347,12 +353,12 @@ HELLO
           <div style="text-align: left;">
             We usually use sed for replacing patterns but it's much much more than this.
           </div>
-          <pre><code style="padding: 15px;" >cat tmp.txt
+          <pre><code>cat tmp.txt
 SOME
 RANDOM
 WORDS
 HELLOOO</code></pre>
-          <pre class="fragment" ><code style="padding: 15px;" >sed 's/O/N/g' tmp.txt
+          <pre class="fragment" ><code>sed 's/O/N/g' tmp.txt
 SNME
 RANDNM
 WNRDS
@@ -386,7 +392,7 @@ HELLNNN</code></pre>
           <div style="text-align: left;">
             Most of the commands comes with a flag called "--help" or "-h" that will print how to use it. For example
           </div>
-          <pre><code style="padding: 15px;" >$ grep --help
+          <pre><code>$ grep --help
 Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
@@ -396,7 +402,7 @@ Example: grep -i 'hello world' menu.h main.c
           <div style="text-align: left;">
             Most of those commands have also a manual that you can access by:
           </div>
-          <pre><code style="padding: 15px;" >$ man echo</code></pre>
+          <pre><code>$ man echo</code></pre>
         </section>
 
 
@@ -424,7 +430,7 @@ Example: grep -i 'hello world' menu.h main.c
 
         <section>
           <h3>Redirections</h3>
-          <pre><code style="padding: 15px;" ># Redirect the output of the command to out.txt
+          <pre><code># Redirect the output of the command to out.txt
 $ echo "Hello World" 1> out.txt
 
 # Redirect stderr to /dev/null (Discard it)
@@ -471,7 +477,7 @@ $ some-command 1> /dev/null 2>&1</code></pre>
             Print all the files ending with ".txt" in the current directory
           </div>
 
-          <pre><code style="padding: 15px;" >$ ls
+          <pre><code>$ ls
 file.ext game.ext README.md test.txt example.txt
 
 $ ls | grep "\.txt$"
