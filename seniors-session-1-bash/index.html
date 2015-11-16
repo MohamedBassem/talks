@@ -624,6 +624,29 @@ exit(0);
 
         </section>
 
+
+        <section>
+          <h3>Conditions</h3>
+
+          <pre><code style="text-align: left;">$ type [
+[ is a shell builtin
+
+$ man [
+
+$ [ 2 -lt 3 ]
+$ echo $?
+0
+$ [ 2 -lt 3 ] && [ 5 -lt 3 ]
+$ echo $?
+1
+</code></pre>
+        <br />
+        <div style="text-align:left;">
+          "[" itself is a command, that takes some flags representing the condition and exits with sucess if the condition is satisfied and failure otherwise.
+        </div>
+
+        </section>
+
       </div>
 
     </div>
