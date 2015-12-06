@@ -207,6 +207,160 @@ $ ./some-command & # Run that command in background ( What about FDs ? )
             </code></pre>
         </section>
 
+
+        <section>
+          <h3>Permissions</h3>
+
+            <pre><code class="bash">mohamedbassem@mohamedbassem-Laptop $ ls -la
+total 24
+drwxrwxr-x 3 mohamedbassem mohamedbassem 4096 Dec  6 02:38 .
+drwxrwxr-x 6 mohamedbassem mohamedbassem 4096 Dec  6 01:13 ..
+drwxrwxr-x 2 mohamedbassem mohamedbassem 4096 Dec  6 02:11 imgs
+-rw-rw-r-- 1 mohamedbassem mohamedbassem 8240 Dec  6 02:38 index.html</code></pre>
+
+          <div style="text-align: left;">
+            <p>Each file/directory has a permissions attribute to manage access to it. It's divided into three groups : </p>
+
+            <ul>
+              <li class="fragment" >The permissions of the owner of the file</li>
+              <li class="fragment" >The permissions of the user who's member in the file's group</li>
+              <li class="fragment" >The permissions of other users</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Permissions</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>Each group has three attributes (so 9 in total)</p>
+            <ul>
+              <li class="fragment" >Read : For files means allowed to view its content. For Dirs means allowed to view the dir file listing.</li>
+              <li class="fragment" >Write : For files means allowed to modify/remove the file content. For Dirs means allowed to add/remove files in dir.</li>
+              <li class="fragment" >Execute : Allowed to execute the file.</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Permissions</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>There's a special way of representing permissions :</p>
+          </div>
+
+          <pre><code class="bash">754
+111 101 100
+rwx r-x r--
+# Means Full access to owner, Read and execute for group
+# and only read access for other users.
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Manipulating permissions</h3>
+          <br />
+          <pre><code class="bash"># Give 744 permission to file.txt
+$ sudo chmod 744 file.txt
+
+# Add read and write permissions to other in file.txt
+$ sudo chmod o+rw file.txt
+
+# Prevent group from writing to file.txt
+$ sudo chmod g-w file.txt
+
+# Give owner full access to file.txt
+$ sudo chmod u=rwx file.txt</code></pre>
+          <pre><code class="bash"># Change file.txt's owner
+$ sudo chown newuser file.txt
+
+# Change owner and group of file.txt
+$ sudo chown newuser:newgroup file.txt
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Sudo ?</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>Sometimes you need to run a certain command as root. `sudo` is what you are looking for.</p>
+
+          <pre><code class="bash"># whoami prints the current effective user
+
+$ whoami
+mohamedbassem
+
+$ sudo whoami
+root
+
+# Switching to a root account
+$ sudo -i # Notice the change in the bash prompt to #
+</code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Package Manager</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>Ubuntu's package manager is called APT. Other distributions have different package managers. Package managers are used to install, remove and update your software.</p>
+
+
+
+          <pre><code class="bash"># There are lots of options but initially we will focus on
+# install/removing packages
+
+# Installing Package
+$ sudo apt-get install git nginx
+
+# Removing package but keeping configuration files
+$ sudo apt-get remove apache2
+
+# Removing package and its configuration files
+$ sudo apt-get purge apache2
+</code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Monitoring</h3>
+          <br />
+          <pre><code class="bash"># Memory/Swap/CPU usage from top/htop
+$ htop
+
+# Disk space
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           774M   10M  764M   2% /run
+/dev/sda3        46G   36G  7.7G  83% /
+/dev/sda4        92G   64G   24G  73% /home
+/dev/sda5       697G  324G  374G  47% /media/MohamedBassem
+
+# Getting the size of a directory
+$ du -sh imgs/
+684K    imgs/
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Famous Directories</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment" >/etc/* : Where you'll find most of the configurations (e.g. nginx)</li>
+              <li class="fragment" >/var/log/* : Where you'll find the logs of most of the daemons</li>
+              <li class="fragment" >~/ : Your home directory</li>
+            </ul>
+          </div>
+        </section>
+
       </div>
 
     </div>
