@@ -361,6 +361,82 @@ $ du -sh imgs/
           </div>
         </section>
 
+
+        <section class="center">
+          <h3>Deployments</h3>
+        </section>
+
+
+        <section>
+          <h3>Networking</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment" >What's an IP ?</li>
+              <li class="fragment" >What's a public IP ?</li>
+              <li class="fragment" >What's a local IP ?</li>
+              <li class="fragment" >What's a port ?</li>
+              <li class="fragment" >Who can connect to a certain port ?</li>
+              <li class="fragment" >What's HTTP default port ? HTTPS ?</li>
+              <li class="fragment" >What's a server ?</li>
+              <li class="fragment" >What's an HTTP server ?</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Servers</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>So why shouldn't I use my laptop as a server ?</p>
+            <ul>
+              <li class="fragment" >Public IP / Behind a Router</li>
+              <li class="fragment" >Uptime</li>
+              <li class="fragment" >Bandwidth</li>
+              <li class="fragment" >Dynamic IP</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Live Demo</h3>
+          <br />
+          <div style="text-align: left;">
+            <p>We need to deploy this nodejs server on a digitalocean ubuntu server behind nginx as the reverse proxy and attach a domain to it.</p>
+          </div>
+
+          <pre><code class="node">var http = require('http');
+var fs = require('fs');
+var counter = 1;
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  console.log("Got a new Request " + req.url);
+  res.end("You are vistor number : " + counter);
+  counter++;
+}).listen(8080);
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>Live Demo</h3>
+          <div style="text-align: left;">
+            <p>Checklist : </p>
+            <ul>
+              <li class="fragment" >Start a server on digitalocean</li>
+              <li class="fragment" >Login (SSH) to the server</li>
+              <li class="fragment" >Install required package to run the server + nginx</li>
+              <li class="fragment" >Configure nginx</li>
+              <li class="fragment" >Supervise the server</li>
+              <li class="fragment" >Check logs</li>
+              <li class="fragment" >Configure the domain</li>
+            </ul>
+          </div>
+        </section>
+
       </div>
 
     </div>
