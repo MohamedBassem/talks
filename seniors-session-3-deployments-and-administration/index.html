@@ -115,10 +115,10 @@
 
 
         <section>
-          <h3>Displaying Processes</h3>
+          <h3>Listing Processes</h3>
 
             <pre><code class="bash">
-# Lisiting all the running processes
+# Listing all the running processes
 $ ps aux
 
 # Getting details of a certain process
@@ -145,7 +145,7 @@ $ htop
               <li class="fragment" >SIGINT (2) : Sent when pressing Ctrl+C to interupt/terminate the process</li>
               <li class="fragment" >SIGTERM (15) : Asks the process to terminate politely or .. </li>
               <li class="fragment" >SIGKILL (9) : Brutally terminate the process!</li>
-              <li class="fragment" >SIGSEGV (11) : Sent to process when accessing a memory address out of its addess space</li>
+              <li class="fragment" >SIGSEGV (11) : Sent to process when accessing a memory address out of its address space</li>
               <li class="fragment" >Others ..</li>
             </ul>
           </div>
@@ -337,7 +337,6 @@ $ htop
 # Disk space
 $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
-tmpfs           774M   10M  764M   2% /run
 /dev/sda3        46G   36G  7.7G  83% /
 /dev/sda4        92G   64G   24G  73% /home
 /dev/sda5       697G  324G  374G  47% /media/MohamedBassem
@@ -345,6 +344,9 @@ tmpfs           774M   10M  764M   2% /run
 # Getting the size of a directory
 $ du -sh imgs/
 684K    imgs/
+
+# Tailing logs
+$ tail -f /var/log/nginx/access.log
 </code></pre>
         </section>
 
