@@ -1,5 +1,4 @@
 var http = require('http');
-var fs = require('fs');
 var counter = 1;
 
 http.createServer(function (req, res) {
