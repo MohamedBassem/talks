@@ -51,6 +51,162 @@
           <h3>Deployments and Administration</h3>
         </section>
 
+
+        <section>
+          <h3>Outline</h3>
+          <div style="text-align: left;">
+            <br />
+            <ul>
+              <li>Processes/Signals</li>
+              <li>Job Management</li>
+              <li>Permissions</li>
+              <li>Package Managers</li>
+              <li>Monitoring</li>
+              <li>Famous Directories</li>
+              <li>Basic Networking</li>
+              <li>Servers</li>
+              <li>Deployments</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Processes</h3>
+          <div style="text-align: left;">
+            <img src="imgs/htop-my-laptop.png" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Processes</h3>
+          <div style="text-align: left;">
+            <p>
+              Each process has :
+            </p>
+            <ul>
+              <li>PID</li>
+              <li>User</li>
+              <li>Standard File Descriptors</li>
+              <li>Parent PID (Except init) </li>
+              <li>Environment Variables</li>
+              <li>State</li>
+              <li>Command</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>Process Types</h3>
+          <br />
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li>Child process</li>
+              <li>Daemon process</li>
+              <li>Orphan process</li>
+              <li>Zombie process</li>
+            </ul>
+          </div>
+          <br />
+          <small>Classification from : <a href="http://www.thegeekstuff.com/2012/02/unix-process-overview/">Here</a></small>
+        </section>
+
+
+        <section>
+          <h3>Displaying Processes</h3>
+
+            <pre><code class="bash">
+# Lisiting all the running processes
+$ ps aux
+
+# Getting details of a certain process
+$ ps aux | grep "apache"
+            </code></pre>
+
+            <pre><code class="bash">
+# Real time processes view
+$ top
+
+# Or a better version
+$ htop
+            </code></pre>
+        </section>
+
+
+        <section>
+          <h3>Signals</h3>
+
+          <br />
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment" >SIGINT (2) : Sent when pressing Ctrl+C to interupt/terminate the process</li>
+              <li class="fragment" >SIGTERM (15) : Asks the process to terminate politely or .. </li>
+              <li class="fragment" >SIGKILL (9) : Brutally terminate the process!</li>
+              <li class="fragment" >SIGSEGV (11) : Sent to process when accessing a memory address out of its addess space</li>
+              <li class="fragment" >Others ..</li>
+            </ul>
+          </div>
+          <br />
+        </section>
+
+
+        <section>
+          <h3>SIGKILL</h3>
+
+          <small>Image from : <a href="https://www.reddit.com/r/ProgrammerHumor/comments/27vcjg/signal_kill/">Reddit</a></small>
+          <br />
+          <img src="imgs/signal-comic.png" />
+
+        </section>
+
+
+        <section>
+          <h3>Sending Signals</h3>
+
+          <br />
+          <div style="text-align: left;">
+            <p>You can send signals to process you own, unless you are root.</p>
+          </div>
+
+            <pre><code class="bash">
+# Sending a signal to processes using kill command
+$ kill &lt;PID&gt; # Sends the default signal (TERM)
+
+# Sending other signals
+$ kill -KILL &lt;PID&gt;
+# Or
+$ kill -9 &lt;PID&gt; # Bye.
+            </code></pre>
+        </section>
+
+
+        <section>
+          <h3>Job Management</h3>
+
+          <br />
+          <div style="text-align: left;">
+            <p>When you are running a long running task from the terminal</p>
+          </div>
+
+            <pre><code class="bash"># A long running command
+$ rails s</code></pre>
+
+          <div style="text-align: left;">
+            <p>You can :</p>
+          </div>
+
+            <pre><code class="bash"># Ctrl+C to send the INT signal we mentioned before
+# Ctrl+Z to stop the foreground process and send it to the background.
+$ bg &lt;JOBID&gt; # Run the job with that ID in background, defaults to the last job
+$ fg &lt;JOBID&gt; # Return the job with that ID to foreground, defaults to the last job
+$ jobs # List all the jobs
+$ ./some-command & # Run that command in background ( What about FDs ? )
+            </code></pre>
+        </section>
+
       </div>
 
     </div>
