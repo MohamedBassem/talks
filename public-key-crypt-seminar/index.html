@@ -57,7 +57,7 @@
             <ul>
               <li class="fragment">Public Wifi Networks</li>
               <li class="fragment">Proxy Servers</li>
-              <li class="fragment">Service Provider</li>
+              <li class="fragment">Service Providers</li>
             </ul>
           </div>
         </section>
@@ -112,8 +112,45 @@
           <h1>Digital Signing</h1>
         </section>
 
+        <section>
+          <h3>Hash Functions</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li>One way</li>
+              <li>Produces same output on same input</li>
+              <li>Usually hard to generate something with the same hash ( Create Collision )</li>
+              <li>Examples : MD5, SHA-1, SHA-2, etc.. </li>
+            </ul>
+        </section>
+
+
+        <section>
+          <h3>Steps</h3>
+
+          <h3 style="text-align: left">Signing</h3>
+          <div style="text-align: left;">
+            <ol>
+              <li>Hash the document with a certain hash function</li>
+              <li>Encrypt the hash with your private key. How to decrypt it?</li>
+              <li>Append the hash to the document</li>
+            </ol>
+
+          <br />
+          <br />
+          <h3 style="text-align: left">Verifying</h3>
+          <div style="text-align: left;">
+            <ol>
+              <li>Hash the document with the same hash function</li>
+              <li>Decrypt the signature with the senders pub key</li>
+                <li>Compare hashes</li>
+            </ol>
+        </section>
+
         <section class="center">
           <h1>SSL</h1>
+          <h3>How to verify a website?</h3>
+
         </section>
 
 
