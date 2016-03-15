@@ -78,8 +78,10 @@
           <img src="imgs/pub-key-image.jpg" />
         </section>
 
-        <section class="center">
-          <h1>RSA</h1>
+        <section>
+          <h4>Ron Rivest, Adi Shamir, Leonard Adleman</h4>
+          <img width="70%" src="imgs/rsa-picture.jpg" />
+          <small>Source: http://www.umsl.edu/~siegelj/information_theory/RSA.jpg</small>
         </section>
 
         <section>
@@ -90,14 +92,14 @@
               <span class="fragment">
                 <li>Coprimes</li>
                 <ul>
-                  <li>X and Y are said to be coprime if gcd(X,Y)= 1.</li>
+                  <li>$x$ and $y$ are said to be coprime if $gcd(x,y)= 1$.</li>
                 </ul>
               </span>
               <br/>
               <span class="fragment">
-                <li>Euler's totient function Phi(n)</li>
+                <li>Euler's totient function $\phi(n)$</li>
                 <ul>
-                  <li>Phi(n) is the number of positive integers that are relatively prime ( Coprime ) to n.</li>
+                  <li>$\phi(n)$ is the number of positive integers ($&lt;n$) that are relatively prime ( Coprime ) to $n$.</li>
                 </ul>
               </span>
 
@@ -105,24 +107,53 @@
               <span class="fragment">
                 <li>Question</li>
                 <ul>
-                  <li>How hard is it to compute 30^31 mod n ? How about 30^1009395 mod n? </li>
+                  <li>How hard is it to compute $30^{31} \bmod n$ ? How about $30^{1009395} \bmod n$? </li>
                 </ul>
               </span>
             </ul>
           </div>
         </section>
 
-
         <section>
-          <h3>RSA</h3>
+          <h3>RSA - Key Generation</h3>
           <br />
           <div style="text-align: left;">
-            <ul>
-              <li class="fragment">Keys Generation</li>
-              <li class="fragment">Encryption</li>
-              <li class="fragment">Decryption</li>
-              <li class="fragment">Proof of correctness</li>
-            </ul>
+            <ol>
+              <li>Choose two large primes $p$ and $q$.</li>
+              <li>Compute $n = p*q$.</li>
+              <li>Compute $\phi(n)= \phi(p)*\phi(q)= (p-1)*(q-1)$.</li>
+              <li>Choose $e$ where $1 &lt; e &lt; \phi(n)$ and $gcd(e, \phi(n))= 1$.</li>
+              <li>Compute $d$ where $d.e ≡  1 \mod \phi(n)$.</li>
+            </ol>
+            <p>
+              Release {$n$,$e$} as the public key and {$n$,$d$} as the private key.
+            </p>
+          </div>
+        </section>
+
+
+        <section>
+          <h3 style="text-align: left">RSA - Encryption</h3>
+          <div style="text-align: left;">
+            <ol>
+              <li>For a message M, convert it to an integer m. Such that $0 &lt;=m &lt;= n$.</li>
+              <li>CipherText = $m^e \bmod n$</li>
+            </ol>
+          </div>
+          <br/>
+          <h3 style="text-align: left">RSA - Decryption</h3>
+          <div style="text-align: left;">
+            <ol>
+              <li>For a given cipher text $c$.</li>
+              <li>$m = (c^d) \bmod n$</li>
+            </ol>
+          </div>
+
+
+          <div style="text-align: left;">
+            <p>
+              But $c = m^e \bmod n$ So if we managed to prove that $m^{ed} \equiv m \mod n$ then RSA works.
+            </p>
           </div>
         </section>
 
@@ -144,6 +175,7 @@
               <li class="fragment">Establishing secure connection ( Diffe-Hellman )</li>
               <li class="fragment">Authentication</li>
             </ul>
+          </div>
         </section>
 
         <section class="center">
@@ -182,6 +214,7 @@
               <li>Usually hard to generate something with the same hash ( Create Collision )</li>
               <li>Examples : MD5, SHA-1, SHA-2, etc.. </li>
             </ul>
+          </div>
         </section>
 
         <section>
@@ -194,7 +227,7 @@
               <li>Encrypt the hash with your private key. How to decrypt it?</li>
               <li>Append the hash to the document</li>
             </ol>
-
+          </div>
           <br />
           <br />
           <h3 style="text-align: left">Verifying</h3>
@@ -204,6 +237,7 @@
               <li>Decrypt the signature with the senders pub key</li>
                 <li>Compare hashes</li>
             </ol>
+          </div>
         </section>
 
         <section class="center">
@@ -220,6 +254,7 @@
               <li>Trusted Certificate Authorities</li>
               <li>Authenticating Servers</li>
             </ul>
+          </div>
         </section>
 
         <section class="center">
@@ -259,6 +294,7 @@
           { src: '../reveal-template/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: '../reveal-template/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: '../reveal-template/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal-template/plugin/math/math.js', async: true },
           { src: '../reveal-template/plugin/notes/notes.js', async: true }
         ]
       });
