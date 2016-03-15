@@ -100,6 +100,7 @@
                 <li>Euler's totient function $\phi(n)$</li>
                 <ul>
                   <li>$\phi(n)$ is the number of positive integers ($&lt;n$) that are relatively prime ( Coprime ) to $n$.</li>
+                  <li>Note: $\phi(n)$ is multiplicative.</li>
                 </ul>
               </span>
 
@@ -136,11 +137,14 @@
           <h3 style="text-align: left">RSA - Encryption</h3>
           <div style="text-align: left;">
             <ol>
-              <li>For a message M, convert it to an integer m. Such that $0 &lt;=m &lt;= n$.</li>
+              <li>For a message M, convert it to an integer m. Such that $0 \leq m \leq n$.</li>
               <li>CipherText = $m^e \bmod n$</li>
             </ol>
           </div>
-          <br/>
+          <div style="text-align: left;">
+            <p>ITS ALL GREEK TO ME : 0920 1900 0112 1200 ..</p>
+          </div>
+
           <h3 style="text-align: left">RSA - Decryption</h3>
           <div style="text-align: left;">
             <ol>
@@ -149,10 +153,42 @@
             </ol>
           </div>
 
-
           <div style="text-align: left;">
             <p>
               But $c = m^e \bmod n$ So if we managed to prove that $m^{ed} \equiv m \mod n$ then RSA works.
+            </p>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>RSA - Proof of Correctness</h3>
+          <br />
+          <div style="text-align: left;">
+            <h4>Remember</h4>
+            <ul>
+              <li>$X \equiv 0 \mod n \iff X = h*n$ for some constant $h$</li>
+              <li>$X \equiv Y \mod n \iff X - h \equiv Y -h \mod n$ for some constant $h$</li>
+              <li>$((a \mod n)(b \mod n)) \mod n \iff ab \mod n$</li>
+            </ul>
+            <br />
+            <br />
+            <h4>Euler's Theorem</h4>
+            <ul>
+              <li>($a^{\phi(n)} \equiv 1 \mod n$) if $gcd(n,a) = 1$</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>RSA - Proof of Correctness</h3>
+          <br />
+          <div style="text-align: left;">
+            <h4>Note out of the Chinese remainder theorem: </h4>
+            <p>
+              $(x \equiv a \mod p) \land (x \equiv a \mod q)$
+              $ \land gcd(p,q) = 1  \implies (x \equiv a \mod pq)$
             </p>
           </div>
         </section>
@@ -172,6 +208,7 @@
             <ul>
               <li class="fragment">What is SSH?</li>
               <li class="fragment">Why is it secure?</li>
+              <li class="fragment">Why should it be secure?</li>
               <li class="fragment">Establishing secure connection ( Diffe-Hellman )</li>
               <li class="fragment">Authentication</li>
             </ul>
@@ -229,7 +266,6 @@
             </ol>
           </div>
           <br />
-          <br />
           <h3 style="text-align: left">Verifying</h3>
           <div style="text-align: left;">
             <ol>
@@ -238,6 +274,8 @@
                 <li>Compare hashes</li>
             </ol>
           </div>
+          <br />
+          <h3 style="text-align: left">But why?</h3>
         </section>
 
         <section class="center">
@@ -249,11 +287,13 @@
           <h3>HTTPS</h3>
           <br />
           <div style="text-align: left;">
-            <ul>
-              <li>Certificate Authority</li>
-              <li>Trusted Certificate Authorities</li>
-              <li>Authenticating Servers</li>
-            </ul>
+            <ol>
+              <li>The company generates a certificate containing the domain, validity dates and a public key. </li>
+              <li>Trusted Certificate Authority verifies that the company is the real owner of the domain and signs its certificate with the CA's private key.</li>
+              <li>The website sends its certificate to the browser.</li>
+              <li>The browser comes pre-loaded with trusted CAs' public keys. It verifies the certificate using the signature and checks domain and validity.</li>
+              <li>The client generates a shared key to be used as the symmetric, encrypts and send it to the server.</li>
+            </ol>
           </div>
         </section>
 
