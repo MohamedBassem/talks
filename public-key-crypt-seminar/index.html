@@ -62,9 +62,8 @@
           </div>
         </section>
 
-
         <section class="center">
-          <h1>Authorization</h1>
+          <h1>Authentication</h1>
         </section>
 
         <section>
@@ -83,12 +82,68 @@
           <h1>RSA</h1>
         </section>
 
+        <section>
+          <h3>Terminology</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <span class="fragment">
+                <li>Coprimes</li>
+                <ul>
+                  <li>X and Y are said to be coprime if gcd(X,Y)= 1.</li>
+                </ul>
+              </span>
+              <br/>
+              <span class="fragment">
+                <li>Euler's totient function Phi(n)</li>
+                <ul>
+                  <li>Phi(n) is the number of positive integers that are relatively prime ( Coprime ) to n.</li>
+                </ul>
+              </span>
+
+              <br />
+              <span class="fragment">
+                <li>Question</li>
+                <ul>
+                  <li>How hard is it to compute 30^31 mod n ? How about 30^1009395 mod n? </li>
+                </ul>
+              </span>
+            </ul>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>RSA</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment">Keys Generation</li>
+              <li class="fragment">Encryption</li>
+              <li class="fragment">Decryption</li>
+              <li class="fragment">Proof of correctness</li>
+            </ul>
+          </div>
+        </section>
+
         <section class="center">
           <h1>Uses</h1>
         </section>
 
         <section class="center">
-          <h1>SSH</h1>
+          <h1>Secure Shell ( SSH )</h1>
+        </section>
+
+        <section>
+          <h3>SSH</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li class="fragment">What is SSH?</li>
+              <li class="fragment">Why is it secure?</li>
+              <li class="fragment">Establishing secure connection ( Diffe-Hellman )</li>
+              <li class="fragment">Authentication</li>
+            </ul>
         </section>
 
         <section class="center">
@@ -97,6 +152,11 @@
           <img src="imgs/ssh-dir.png" />
         </section>
 
+        <section class="center">
+          <h3>Let's check an actual private key</h3>
+          <br />
+          <pre><code>$ openssl rsa -text -in private_key</code></pre>
+        </section>
 
         <section class="center">
           <h2>SSH SOMEONE IS DOING SOMETHING NASTY </h2>
@@ -124,7 +184,6 @@
             </ul>
         </section>
 
-
         <section>
           <h3>Steps</h3>
 
@@ -148,14 +207,27 @@
         </section>
 
         <section class="center">
-          <h1>SSL</h1>
+          <h1>SSL/TLS</h1>
           <h3>How to verify a website?</h3>
-
         </section>
 
+        <section>
+          <h3>HTTPS</h3>
+          <br />
+          <div style="text-align: left;">
+            <ul>
+              <li>Certificate Authority</li>
+              <li>Trusted Certificate Authorities</li>
+              <li>Authenticating Servers</li>
+            </ul>
+        </section>
 
         <section class="center">
-          <h1>Famous Attacks</h1>
+          <h1>Famous Modern Attacks</h1>
+        </section>
+
+        <section class="center">
+          <h1>Imagine</h1>
         </section>
 
         <section class="center">
