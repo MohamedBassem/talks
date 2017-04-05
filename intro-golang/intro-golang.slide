@@ -182,3 +182,12 @@ Let's modify the code together to accept and respond with json instead of plain 
 * Sleep Sort
 
 .play code/sleep_sort.go /START OMIT/,/END OMIT/
+
+
+* Workshop
+
+* Workshop
+
+- Install Go : [[https://golang.org/doc/install]].
+- Start learning Go : [[https://tour.golang.org]].
+- Start solving the problems on Godge.
