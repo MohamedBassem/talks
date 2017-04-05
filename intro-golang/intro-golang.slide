@@ -53,7 +53,7 @@ You can compile to any target platform from your machine.
 
 * The Go way
 
-* The Go way : Packages
+* Packages
 
 Go code is organised into packages.
 
@@ -63,7 +63,7 @@ A single directory can contain one and only one package.
 
 Packages are addressed starting from what's called `GOPATH` (except stdlib).
 
-* The Go way : Visibility
+* Visibility
 
 Go doesn't have access modifiers (public, private, protected ..).
 
@@ -85,11 +85,11 @@ Then
       fmt.Println(math.Add(1,2)) // 3
   }
 
-* The Go way : Multiple returns
+* Multiple returns
 
 .play code/multiple_returns.go /START OMIT/,/END OMIT/
 
-* The Go way : Error handling
+* Error handling
 
 Go doesn't have exceptions.
 
