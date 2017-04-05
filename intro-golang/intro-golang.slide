@@ -1,0 +1,184 @@
+Intro to Go
+Golang Cairo #1
+8 Apr 2017
+Tags: golang,egypt,cairo
+
+Mohamed Bassem
+http://mbassem.com
+@MohamedBassem
+
+* History
+
+- Announced in 2009
+- Go 1.0 was released in March 2012
+- Open source
+- Created at Google
+- Current version is Go 1.8
+
+* Who's using Go?
+
+- Google (most notably kubernetes)
+- Docker
+- Dropbox
+- Uber
+- Cloudflare
+- [[https://github.com/golang/go/wiki/GoUsers][And many more ...]]
+
+* What is Go?
+
+Go is :
+
+- Compiled
+- Statically typed
+- Concurrent
+- Garbage Collected
+
+* What is Go?
+
+Go binaries are statically linked.
+Build the binary, copy it to the server and run it.
+
+  $ go build
+  $ scp ./binary user@ip ~/binary
+  $ ssh user@ip ~/binary
+
+Go is cross compiled ([[https://golang.org/doc/install/source#environment]]).
+You can compile to any target platform from your machine.
+
+  $ GOOS=windows GOARCH=amd64 go build
+
+* Hello World
+
+.play code/hello_world.go
+
+* The Go way
+
+* The Go way : Packages
+
+Go code is organised into packages.
+
+Packages map to directories on the file system.
+
+A single directory can contain one and only one package.
+
+Packages are addressed starting from what's called `GOPATH` (except stdlib).
+
+* The Go way : Visibility
+
+Go doesn't have access modifiers (public, private, protected ..).
+
+If a variable/function starts with an uppercase it's exported.
+
+Assume you have:
+
+  package math
+
+  func Add(a int, b int) int {
+      return a + b
+  }
+
+Then
+
+  import "github.com/MohamedBassem/meetup/math"
+
+  func main() {
+      fmt.Println(math.Add(1,2)) // 3
+  }
+
+* The Go way : Multiple returns
+
+.play code/multiple_returns.go /START OMIT/,/END OMIT/
+
+* The Go way : Error handling
+
+Go doesn't have exceptions.
+
+If a function can fail, its last return value should be of type *error*.
+
+Error handling is done with normal if conditions.
+
+  ret, err := aFunctionThatCanFail()
+  if err != nil {
+      // Handle the error or return it
+  }
+
+* defer
+
+No more :
+
+  func do() {
+      fmt.Println("START")
+      if something {
+          fmt.Println("END")
+          return
+      }
+      // Do stuff
+      fmt.Println("END")
+  }
+
+`defer` defers the execution of a certain call to when the function returns.
+
+  func do() {
+      fmt.Println("START")
+      defer fmt.Println("END")
+      if something {
+          return
+      }
+      // Do stuff
+  }
+
+* Interfaces
+
+You don't need to :
+
+  class Test implements Stringable
+
+If you implement the methods that an interface requires then you implement the interface.
+
+.play code/interfaces.go /START OMIT/,/END OMIT/
+
+
+* goroutines
+
+You can think of goroutines are lightweight threads.
+
+Run a function synchronously :
+
+  longRunningFunction()
+
+Run a function asynchronously (in a seperate goroutine) :
+
+  go longRunningFunction()
+
+Goroutines are cheap. You can have thousands of them in a single program.
+
+* Channels
+
+Channels are a builtin type that is you can send and receive value through.
+
+It's used for communication between goroutines.
+
+.play code/channels.go /START OMIT/,/END OMIT/
+
+* Examples
+
+* Web server
+
+A web server that reads the 'name' query param and responds with a plain text greeting.
+
+.play code/web_server.go /START OMIT/,/END OMIT/
+
+
+* JSON Web server
+
+Let's modify the code together to accept and respond with json instead of plain text.
+
+.play code/web_server.go
+
+* Producer-Consumer
+
+.play code/producer_consumer.go /START OMIT/,/END OMIT/
+
+* Sleep Sort
+
+.play code/sleep_sort.go /START OMIT/,/END OMIT/
