@@ -6,7 +6,6 @@ import "fmt"
 type Stringer interface {
 	String() string
 }
-
 type Test struct {
 	msg string
 }
@@ -14,7 +13,6 @@ type Test struct {
 func (t Test) String() string {
 	return t.msg
 }
-
 func main() {
 	var x Stringer = Test{msg: "Hello World"}
 	fmt.Println(x.String())

@@ -27,6 +27,8 @@ Mohamed Bassem
 
 Go is :
 
+- Simple
+- Fast ([[http://benchmarksgame.alioth.debian.org/]])
 - Compiled
 - Statically typed
 - Concurrent
@@ -48,7 +50,7 @@ You can compile to any target platform from your machine.
 
 * Hello World
 
-.play code/hello_world.go
+.play -edit code/hello_world.go
 
 * The Go way
 
@@ -136,10 +138,12 @@ If you implement the methods that an interface requires then you implement the i
 
 .play code/interfaces.go /START OMIT/,/END OMIT/
 
+What about `interface{}`?
+
 
 * goroutines
 
-You can think of goroutines are lightweight threads.
+You can think of goroutines as lightweight threads.
 
 Run a function synchronously :
 
@@ -153,35 +157,48 @@ Goroutines are cheap. You can have thousands of them in a single program.
 
 * Channels
 
-Channels are a builtin type that is you can send and receive value through.
+Channels are a builtin type that you can send and receive value through.
 
 It's used for communication between goroutines.
 
 .play code/channels.go /START OMIT/,/END OMIT/
 
+* Thing You Won't Find
+
+- Generics (Maybe soon?)
+- Overrdiding functions or operators
+- Functional style functions (map, reduce, ..)
+
+* Toolings
+
+- Go has a standard code style (format) `gofmt`
+- `go vet` for common mistakes
+- `go doc` for the documentation
+- Built in test framework `go test`
+
+Editor integrations ❤️
+- vim
+- emacs
+- sublime
+- vs code
+- ..
+
 * Examples
 
-* Web server
 
-A web server that reads the 'name' query param and responds with a plain text greeting.
+* Sleep Sort
 
-.play code/web_server.go /START OMIT/,/END OMIT/
-
-
-* JSON Web server
-
-Let's modify the code together to accept and respond with json instead of plain text.
-
-.play code/web_server.go
+.play -edit code/sleep_sort.go /START OMIT/,/END OMIT/
 
 * Producer-Consumer
 
 .play code/producer_consumer.go /START OMIT/,/END OMIT/
 
-* Sleep Sort
+* Web server
 
-.play code/sleep_sort.go /START OMIT/,/END OMIT/
+A web server that reads the 'name' query param and responds with a plain text greeting.
 
+.play -edit code/web_server.go /START OMIT/,/END OMIT/
 
 * Workshop
 
@@ -189,4 +206,5 @@ Let's modify the code together to accept and respond with json instead of plain 
 
 - Install Go : [[https://golang.org/doc/install]].
 - Start learning Go : [[https://tour.golang.org]].
+- [[https://godoc.org/-/go][Go standard package documentation]]
 - Start solving the problems on Godge.
